@@ -23,7 +23,8 @@ node["apache"]["sites"].each do |sitename, data|
 		source "index.html.erb"
                 mode "0644"
                 variables(
-                        :site_title => data["site_title"]
+                        :site_title => data["site_title"],
+			:author_name => node["author"]["name"]
                 )
 	end
 
